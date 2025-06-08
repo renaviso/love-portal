@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Message for Jamelyn 💖</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; margin-top: 80px; background: #fff0f6;">
+
+    <h1>Special Message Portal for Jamelyn 💬</h1>
+
+    <p>Enter your name:</p>
+    <input type="text" id="nameInput" placeholder="Your name here" />
+
+    <p style="margin-top: 20px;">Select message style:</p>
+    <select id="styleSelect">
+        <option value="romantic">Romantic</option>
+        <option value="poetic">Poetic</option>
+        <option value="sarcastic">Sarcastic</option>
+    </select>
+
+    <br /><br />
+    <button onclick="showMessage()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Show Message</button>
+
+    <h2 id="message" style="margin-top: 40px; color: #d81b60;"></h2>
+
+    <script>
+        function showMessage() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name === '') {
+                alert('Please enter your name first!');
+                return;
+            }
+
+            if (name.toLowerCase() !== 'jamelyn') {
+                document.getElementById('message').innerText = "Sorry, this portal is only for Jamelyn 💖";
+                return;
+            }
+
+            const style = document.getElementById('styleSelect').value;
+
+            let message = '';
+
+            if (style === 'romantic') {
+                message = `Jamelyn, from the moment I started talking to you, I knew you were someone truly special — the one who brightens my days and fills my heart with hope for a beautiful future together.`;
+            } else if (style === 'poetic') {
+                message = `Jamelyn, your presence in my life is like a gentle sunrise — quietly promising new beginnings and endless warmth in every moment we share.`;
+            } else if (style === 'sarcastic') {
+                message = `Oh Jamelyn, who knew that messaging you would mean signing up for a lifetime of laughter, love, and occasional eye rolls? Lucky me!`;
+            }
+
+            document.getElementById('message').innerText = message;
+        }
+    </script>
+
+</body>
+</html>
